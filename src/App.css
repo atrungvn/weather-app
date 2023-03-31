@@ -36,3 +36,25 @@
     transform: rotate(360deg);
   }
 }
+
+.main {
+  width: 300px;
+  background-color: white;
+  color: black;
+}
+
+#image {
+  width: 200px;
+}
+
+.status {
+  font-weight: bold;
+}
+
+.temp {
+  font-weight: bolder;
+}
+
+#input {
+  width:235px;
+}
