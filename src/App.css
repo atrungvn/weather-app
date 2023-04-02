@@ -39,8 +39,10 @@
 
 .main {
   width: 300px;
+  border-radius: 10px;
   background-color: white;
   color: black;
+  margin-top: 20px;
 }
 
 #image {
