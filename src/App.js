@@ -50,7 +50,7 @@ function App() {
   const [status,setStatus] = useState();
   const [country,setCountry] = useState();
   const [ok,setOk] = useState(false);
-  const [icon,setIcon] = useState();
+  
 
   const apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${state}&units=metric&appid=${API_KEY}`;
   
@@ -66,7 +66,7 @@ function App() {
   }
 
   useEffect (() => {
-    console.log(apiUrl);
+    
     const getData = async () => {
         await axios.get(apiUrl).then(res => {
         setOk(true);
@@ -85,7 +85,7 @@ function App() {
     }
       getData();
     
-  },[state])
+  },[apiUrl])
 
   function Show () {
     let idx1 = (listIcon.findIndex((item) => item.type === status));
@@ -95,7 +95,7 @@ function App() {
     <div className='main'>
       <div>{state}, {country}</div>
       
-      <div ><img id="image" src={imgUrl} /></div>
+      <div ><img id="image" src={imgUrl} alt="Weather" /></div>
       <div className='status'>{status}</div>
       <div className='temp'>{temp}&deg;C</div>
     </div>
@@ -104,7 +104,7 @@ function App() {
 
 
   function ShowErr () {
-    if (getState) {
+    if (state) {
       return <div>Not Found</div>
     } else {
       return null;
